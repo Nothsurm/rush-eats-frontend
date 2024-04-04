@@ -112,10 +112,12 @@ export default function DetailPage() {
                     Menu
                 </span>
                 {restaurant.menuItems.map((menuItem) => (
-                    <MenuItems menuItem={menuItem} addToCart={() => addToCart(menuItem)} />
+                    <div key={menuItem._id}>
+                        <MenuItems menuItem={menuItem} addToCart={() => addToCart(menuItem)} />
+                    </div>
                 ))}
             </div>
-            <div className="">
+            <div>
                 <Card>
                     <OrderSummary 
                         restaurant={restaurant} 

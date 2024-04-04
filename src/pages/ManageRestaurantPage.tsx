@@ -24,7 +24,9 @@ export default function ManageRestaurantPage() {
       >
         <h2 className="text-2xl font-bold">{orders?.length} active orders</h2>
         {orders?.map((order) => (
-          <OrderItemCard order={order} />
+          <div key={order._id}>
+            <OrderItemCard order={order} />
+          </div>
         ))}
       </TabsContent>
       <TabsContent value="manage-restaurant">
