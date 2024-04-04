@@ -136,7 +136,7 @@ type UpdateOrderStatusRequest = {
     status: string;
 }
 
-export const useUpdateMyrestaurantOrder = () => {
+export const useUpdateMyRestaurantOrder = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     const updateMyRestaurantOrder = async (updateStatusOrderRequest: UpdateOrderStatusRequest) => {
