@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function MainNav() {
   const {loginWithRedirect, isAuthenticated} = useAuth0();
+
   return (
     <span className="flex space-x-2 items-center">
       {isAuthenticated ? (
@@ -14,7 +15,6 @@ export default function MainNav() {
           </Link>
           <UsernameMenu />
         </>
-        
       ) : (
         <Button 
           variant='ghost' 

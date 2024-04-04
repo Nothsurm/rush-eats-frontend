@@ -3,18 +3,15 @@ import OrderStatusDetail from "@/components/OrderStatusDetail";
 import OrderStatusHeader from "@/components/OrderStatusHeader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-
 export default function OrderStatusPage() {
     const { orders, isLoading } = useGetMyOrders();
-
-    console.log(orders);
     
     if (isLoading) {
         return "Loading...";
     }
 
     if (!orders || orders.length === 0) {
-        return "No orders found";
+        return "No Orders Found...";
     }
 
   return (
@@ -26,7 +23,7 @@ export default function OrderStatusPage() {
                     <OrderStatusDetail order={order} />
                     <AspectRatio ratio={16 / 5}>
                         <img 
-                            src={order.restaurant.imageUrl} 
+                            src={order?.restaurant?.imageUrl} 
                             className="rounded-md object-cover h-full w-full"
                         />
                     </AspectRatio>
