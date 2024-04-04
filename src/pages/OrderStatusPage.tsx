@@ -7,12 +7,14 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 export default function OrderStatusPage() {
     const { orders, isLoading } = useGetMyOrders();
 
+    console.log(orders);
+    
     if (isLoading) {
-        return "Loading..."
+        return "Loading...";
     }
 
     if (!orders || orders.length === 0) {
-        return "No orders found"
+        return "No orders found";
     }
 
   return (
